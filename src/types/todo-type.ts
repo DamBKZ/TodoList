@@ -3,9 +3,9 @@ export type todoType = {
 	title: string;
 	text: string | null;
 	done: boolean;
-	createdAt: string;
-	updatedAt: string;
-	dueDate: string | null;
+	createdAt: string | Date;
+	updatedAt: string | Date;
+	dueDate: string | Date | null;
 };
 
 export type NewTodo = {
