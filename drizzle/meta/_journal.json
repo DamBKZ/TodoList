@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1740741591647,
+      "tag": "0000_next_robbie_robertson",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1740742028081,
+      "tag": "0001_volatile_queen_noir",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1740997747811,
+      "tag": "0002_overjoyed_thor",
+      "breakpoints": true
+    }
+  ]
+}
