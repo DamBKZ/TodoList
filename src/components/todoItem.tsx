@@ -30,44 +30,30 @@ const TodoItem = ({
 					{todo.title}
 				</span>
 			</section>
-
 			<section className="flex flex-col space-y-2 mt-2">
-				{todo.text && <p className="text-sm text-gray-700">{todo.text}</p>}
 				<p className="text-xs text-gray-500">
-					Créée le: {new Date(todo.createdAt).toLocaleDateString()}
+					Créée le :{" "}
+					{new Date(todo.createdAt).toLocaleDateString("fr-FR", {
+						day: "numeric",
+						month: "long",
+						year: "numeric",
+					})}
 				</p>
-				{todo.dueDate && (
-					<p className="text-xs text-blue-500">
-						À faire avant: {new Date(todo.dueDate).toLocaleDateString()}
-					</p>
-				)}
+				<p className="text-xs text-blue-500">
+					À faire avant :{" "}
+					{new Date(todo.dueDate).toLocaleDateString("fr-FR", {
+						day: "numeric",
+						month: "long",
+						year: "numeric",
+					})}
+				</p>
 			</section>
-
-			<section className="flex space-x-2">
-				<button
-					type="button"
-					onClick={() => {
-						const newText = prompt(
-							"Modifier la tâche :",
-							todo.text ?? "",
-						)?.trim();
-						if (newText !== "" && newText !== undefined) {
-							onEdit(todo.id, newText);
-						}
-					}}
-					className="text-blue-500 hover:text-blue-700"
-				>
-					✏️
-				</button>
-
-				<button
-					type="button"
-					onClick={() => onDelete(todo.id)}
-					className="text-red-500 hover:text-red-700"
-				>
-					🗑️
-				</button>
-			</section>
+			<button type="button" onClick={() => onEdit(todo.id, todo.title)}>
+				✏️
+			</button>
+			<button type="button" onClick={() => onDelete(todo.id)}>
+				🗑️
+			</button>
 		</section>
 	);
 };

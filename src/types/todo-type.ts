@@ -3,13 +3,13 @@ export type todoType = {
 	title: string;
 	text: string | null;
 	done: boolean;
-	createdAt: string | Date;
-	updatedAt: string | Date;
-	dueDate: string | Date | null;
+	createdAt: Date;
+	updatedAt: Date;
+	dueDate: Date;
 };
 
 export type NewTodo = {
 	title: string;
 	text: string | null;
-	dueDate: string | null;
+	dueDate: Date;
 };

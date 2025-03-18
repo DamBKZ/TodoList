@@ -1,0 +1,1 @@
+ALTER TABLE `todos` MODIFY COLUMN `due_date` timestamp NOT NULL;

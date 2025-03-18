@@ -12,15 +12,15 @@ export const getTodos = async () => {
 export const addTodo = async (
 	title: string,
 	text: string | null,
-	dueDate: string | null,
+	dueDate: Date,
 ) => {
+	const formattedDueDate = new Date(dueDate);
 	await db.insert(todo).values({
 		title,
 		text: text ?? "",
 		done: false,
-		dueDate: dueDate ? new Date(dueDate) : null,
+		dueDate: formattedDueDate,
 	});
-
 	revalidatePath("/");
 };
 

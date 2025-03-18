@@ -22,6 +22,20 @@
       "when": 1740997747811,
       "tag": "0002_overjoyed_thor",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1741944693121,
+      "tag": "0003_slimy_namorita",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1741947145460,
+      "tag": "0004_bright_husk",
+      "breakpoints": true
     }
   ]
 }

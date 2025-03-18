@@ -5,11 +5,7 @@ import { useState } from "react";
 const TodoForm = ({
 	onAddTodo,
 }: {
-	onAddTodo: (
-		title: string,
-		text: string | null,
-		dueDate: string | null,
-	) => void;
+	onAddTodo: (title: string, text: string | null, dueDate: Date) => void;
 }) => {
 	const [title, setTitle] = useState("");
 	const [text, setText] = useState("");
@@ -19,7 +15,9 @@ const TodoForm = ({
 		e.preventDefault();
 		if (!title.trim()) return;
 
-		onAddTodo(title, text || null, dueDate || null);
+		const parsedDueDate = dueDate ? new Date(dueDate) : new Date();
+
+		onAddTodo(title, text || null, parsedDueDate);
 
 		setTitle("");
 		setText("");
@@ -43,7 +41,9 @@ const TodoForm = ({
 				onChange={(e) => setText(e.target.value)}
 				className="p-2 border rounded-md w-full"
 			/>
+			<label htmlFor="dueDate">Date</label>
 			<input
+				id="dueDate"
 				type="date"
 				value={dueDate}
 				onChange={(e) => setDueDate(e.target.value)}

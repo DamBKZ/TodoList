@@ -5,6 +5,7 @@ import {
 	boolean,
 	timestamp,
 	varchar,
+	date,
 } from "drizzle-orm/mysql-core";
 
 export const todo = mysqlTable("todos", {
@@ -14,5 +15,5 @@ export const todo = mysqlTable("todos", {
 	done: boolean("done").default(false).notNull(),
 	createdAt: timestamp("created_at").defaultNow().notNull(),
 	updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
-	dueDate: timestamp("due_date"),
+	dueDate: date("due_date").notNull(),
 });
